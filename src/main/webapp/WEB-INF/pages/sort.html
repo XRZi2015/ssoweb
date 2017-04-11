@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>排序</h1>
+<div>
+
+    <ul>
+
+        <#assign arrays=[3,2,5,7,6,1]/>
+        <li>未排序</li>
+        <#list arrays as array>
+            ${array},
+        </#list>
+
+        <li>Controller排序</li>
+        <#list sort_int(arrays) as array>
+            ${array},
+        </#list>
+
+        <li>Freemarker排序</li>
+        <#list arrays?sort as array>
+            ${array},
+        </#list>
+
+        <li>获取下标</li>
+        <#list arrays as array>
+            ${array_index},
+        </#list>
+        <li>获取长度</li> ${arrays?size}
+        <li>通过下标取值</li> ${arrays[1]}
+
+    </ul>
+
+</div>
+
+</body>
+</html>
